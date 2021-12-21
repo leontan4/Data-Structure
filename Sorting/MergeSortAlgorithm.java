@@ -6,7 +6,7 @@ public class MergeSortAlgorithm{
     // Base Case
     // If the array length is less than 2, which is only 1 element left, then it will return
     if(n < 2){
-        return arr;
+      return arr;
     }
 
     // Declaring the variables to divide the arrays and spit them to different arrays
@@ -17,10 +17,10 @@ public class MergeSortAlgorithm{
     // Divide into left and right
     // Populate the elements into left ad right array
     for(int i=0; i<mid; i++){
-        left[i] = arr[i];
+      left[i] = arr[i];
     }
     for(int i=mid; i<n; i++){
-        right[i-mid] = arr[i];
+      right[i-mid] = arr[i];
     }
 
     // Will keep divide until the arrays only has 1 element and then merge it
@@ -39,28 +39,28 @@ public class MergeSortAlgorithm{
     int arrIndex = 0;
 
     while(leftIndex < leftLimit && rightIndex < rightLimit){
-        if(left[leftIndex] <= right[rightIndex]){
-            arr[arrIndex] = left[leftIndex];
-            leftIndex++;
-        } else{
-            arr[arrIndex] = right[rightIndex];
-            rightIndex++;
-        }
-        arrIndex++;
+      if(left[leftIndex] <= right[rightIndex]){
+          arr[arrIndex] = left[leftIndex];
+          leftIndex++;
+      } else{
+          arr[arrIndex] = right[rightIndex];
+          rightIndex++;
+      }
+      arrIndex++;
     }
 
     // Populate the remaining elements in LEFT array into original array
     while(leftIndex < leftLimit){
-        arr[arrIndex] = left[leftIndex];
-        arrIndex++;
-        leftIndex++;
+      arr[arrIndex] = left[leftIndex];
+      arrIndex++;
+      leftIndex++;
     }
 
     // Populate the remaining elements in RIGHT array into original array
-        while(rightIndex < rightLimit){
-        arr[arrIndex] = right[rightIndex];
-        arrIndex++;
-        rightIndex++;
+    while(rightIndex < rightLimit){
+      arr[arrIndex] = right[rightIndex];
+      arrIndex++;
+      rightIndex++;
     }
     return arr;
   }
