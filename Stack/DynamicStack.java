@@ -1,6 +1,7 @@
+// This is a dynamic stack class where users do not know the exact number of elements to be put into
 public class DynamicStack {
 
-    // Initialize the array to be of size 5
+    // Initialize the array to be of size 2
     int top = -1;
     int[] stack = new int[2];
     
