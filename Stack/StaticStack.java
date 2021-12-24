@@ -1,3 +1,4 @@
+// This is a static stack class where the number of elements will be fixed
 public class StaticStack {
 
     // Initialize the array to be of size 5
