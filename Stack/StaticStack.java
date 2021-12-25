@@ -52,15 +52,15 @@ public class StaticStack {
         return data;
     }
 
-    // Showing elements currently in stack
+    // Showing elements currently in stack from the last element to the first
     public void show(){
         if(top <= 0){
             System.out.println("There is currently no element in the stack.");
             return;
         }
 
-        for(int elem : stack){
-            System.out.println(elem + " ");
+        for(int i=top; i>=0; i--){
+            System.out.println(stack[i]);
         }
     }
 }
