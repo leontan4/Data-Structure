@@ -69,10 +69,10 @@ public class DynamicStack {
         stack = newStack;
     }
     
-    // Display elements of stack
+    // Display elements of stack from last element to the first
     public void show(){
-        for(int elem : stack){
-            System.out.println(elem);
+        for(int i=top; i>=0; i--){
+            System.out.println(stack[i]);
         }
     }
 }
