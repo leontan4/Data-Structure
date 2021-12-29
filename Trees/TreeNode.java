@@ -1,53 +1,53 @@
 public class TreeNode {
-    TreeNode left, right;
-    int data;
+    private TreeNode leftChild;
+    private TreeNode rightChild;
+    private int data;
 
-    public TreeNode(int data){
+    public TreeNode (int data){
         this.data = data;
     }
 
     public void insert(int value){
-        if(value <= data){
-            if(left == null) {
-                left = new TreeNode(value);
+        if(value == data){
+            return;
+        }
+
+        if(value < data){
+            if(leftChild == null){
+                leftChild = new TreeNode(value);
             } else{
-                left.insert(value);
+                leftChild.insert(value);
             }
         } else{
-            if(right == null){
-                right = new TreeNode(value);
+            if(rightChild == null){
+                rightChild = new TreeNode(value);
             } else{
-                right.insert(value);
+                rightChild.insert(value);
             }
         }
     }
 
-    public boolean contains(int value){
-        if(value == data){
-            return true;
-        } else if(value < data){
-            if(left == null){
-                return false;
-            } else{
-                return left.contains(value);
-            }
-        } else{
-            if(right == null){
-                return false;
-            } else{
-                return right.contains(value);
-            }
-        }
+    public TreeNode getLeftChild() {
+        return leftChild;
     }
-    
-    // In-Order printing
-    public void printInOrder(){
-        if(left != null){
-            left.printInOrder();
-        }
-        System.out.println(data);
-        if(right != null){
-            right.printInOrder();
-        }
+
+    public void setLeftChild(TreeNode leftChild) {
+        this.leftChild = leftChild;
+    }
+
+    public TreeNode getRightChild() {
+        return rightChild;
+    }
+
+    public void setRightChild(TreeNode rightChild) {
+        this.rightChild = rightChild;
+    }
+
+    public int getData() {
+        return data;
+    }
+
+    public void setData(int data) {
+        this.data = data;
     }
 }
